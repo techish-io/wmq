@@ -68,5 +68,6 @@ bash "create listener" do
     echo 'DEF LISTENER(#{node[:wmq][:qmgr][:listener][:name]}) TRPTYPE(TCP) PORT(#{node[:wmq][:qmgr][:listener][:port]}) CONTROL(QMGR) REPLACE' | "#{node[:wmq][:installation][:root]}"/bin/runmqsc "#{node[:wmq][:qmgr][:name]}"
     echo 'START LISTENER(#{node[:wmq][:qmgr][:listener][:name]})' | #{node[:wmq][:installation][:root]}/bin/runmqsc #{node[:wmq][:qmgr][:name]}    
   EOH
+  not_if "ps -eaf|grep runmqlsr|grep '#{node[:wmq][:qmgr][:listener][:name]}'"
 end
 
