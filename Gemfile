@@ -16,3 +16,4 @@ gem 'berkshelf'
 
 gem 'test-kitchen'
 gem 'kitchen-vagrant'
+gem "rake", group: :test, require: nil
