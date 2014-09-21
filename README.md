@@ -136,6 +136,29 @@ Note: This cookbook was tested only on CentOS release 6.4
 </table>
 
 
+## Resources/Providers
+
+This cookbook contains the `queue` custom resorce and provider.
+### Actions
+
+- `:create`: create a local queue
+
+### Attribute Parameters
+
+- `type`: Type of the queue, only 'local' is supported at the moment. Default is local
+- `maxdepth`: Maximum depth of queue. Default is 5000.
+- `descr`: Description of  of queue. Default is empty
+- `installation_root`: MQ installation location. Default is value of node attribute default[:wmq][:installation][:root]
+- `qmgr_name`: Queue manager name. Default is value of node attribute default[:wmq][:qmgr][:name]
+- `user`: User under which queue manager is running. Default is value of node attribute default[:wmq][:user]
+
+### Examples
+	
+	#Creates queue named TEST.LOCAL.QUEUE
+	queue "TEST.LOCAL.QUEUE" do
+		action :create
+	end
+
 ## Usage
 
 ### wmq::default
