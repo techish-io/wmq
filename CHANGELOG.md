@@ -1,9 +1,8 @@
-# 0.1.0
+v0.1.0
+------
 
 Initial release of wmq
 
-* Enhancements
-  * an enhancement
-
-* Bug Fixes
-  * a bug fix
+v0.1.1
+------
+- Fix #2 license update
